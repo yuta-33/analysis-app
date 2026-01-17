@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "行動心理・傾向分析 | Behavioral Pattern Analysis",
   description: "MBTI×血液型×星座から、あなたの現代社会における「役割」と「特性」を分析します。",
+  other: {
+    "google-adsense-account": "ca-pub-8419400679212674",
+  },
   openGraph: {
     title: "行動心理・傾向分析",
     description: "私だけの分析結果を見てみる？ MBTIと血液型でわかる行動パターン。",
@@ -38,9 +41,8 @@ export default function RootLayout({
         {/* ※今はコメントアウト状態でもOKですが、申請時は以下のパブリッシャーIDを書き換えてください */}
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419400679212674" 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419400679212674"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body
