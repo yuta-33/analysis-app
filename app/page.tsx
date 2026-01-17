@@ -290,25 +290,44 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 6. 解決策アイテム */}
+                {/* 6. 解決策アイテム（アフィリエイト用にレイアウト変更：縦積み） */}
                 <div className="mt-4 pt-4">
-                    <div className="bg-slate-800 rounded-xl p-4 shadow-lg">
-                        <div className="flex items-start gap-4 mb-3">
-                            <div className="text-3xl bg-white/10 rounded-lg p-2 backdrop-blur-sm">
-                                {result.item.emoji}
-                            </div>
-                            <div>
-                                <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Solution Tool</div>
-                                <div className="font-bold text-white">{result.item.name}</div>
+                    <a 
+                        href={result.item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block group"
+                    >
+                        <div className="bg-slate-800 rounded-xl p-4 shadow-lg transition-all group-hover:bg-slate-750 border border-slate-700/50">
+                            
+                            {/* 上段：テキスト情報 */}
+                            <div className="mb-3">
+                                <div className="flex justify-between items-center mb-1">
+                                    <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">
+                                        Solution Tool
+                                    </div>
+                                    <span className="text-[10px] text-slate-400">PR</span>
+                                </div>
+                                <div className="font-bold text-white text-sm group-hover:text-blue-300 transition-colors flex items-center gap-1">
+                                    {result.item.name}
+                                    <span className="text-xs opacity-70">↗</span>
+                                </div>
                                 <p className="text-xs text-slate-300 mt-1 leading-tight">
-                                    {result.item.reason}
+                                    {result.item.description}
                                 </p>
                             </div>
+
+                            {/* 下段：バナー画像（横幅いっぱいに表示） */}
+                            <div className="w-full bg-white rounded-lg p-2 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src={result.item.image} 
+                                    alt={result.item.name} 
+                                    className="w-full h-auto max-h-[80px] object-contain" 
+                                />
+                            </div>
+
                         </div>
-                        <a href={result.item.link} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg text-xs tracking-wider uppercase shadow transition-colors">
-                            Amazonで詳細を見る ↗
-                        </a>
-                    </div>
+                    </a>
                 </div>
 
             </div>

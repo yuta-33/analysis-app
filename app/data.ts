@@ -247,11 +247,12 @@ export const personalityMatrix: Record<string, string> = {
 // ==========================================
 // 4. 解決アイテム
 // ==========================================
-export const solutionItems = [
-  { name: "思考整理ノート", emoji: "📓", reason: "書き出すことでメタ認知を促し、脳内のワーキングメモリを解放します。", link: "https://amzn.to/example", color: "ミッドナイトブルー" },
-  { name: "アロマディフューザー", emoji: "🌿", reason: "嗅覚刺激は大脳辺縁系に直結し、論理では止められない不安を鎮静化します。", link: "https://amzn.to/example", color: "ウッディ" },
-  { name: "ノイズキャンセリング", emoji: "🎧", reason: "聴覚情報を遮断し、過剰作動している『デフォルト・モード・ネットワーク』を休ませます。", link: "https://amzn.to/example", color: "ブラック" },
-];
+export type Item = {
+  name: string;
+  description: string; // ← reason から変更した場合
+  image: string;       // ← emoji から変更
+  link: string;        // ← 新しく追加
+};
 
 // ロジック本体
 function getHash(str: string): number {
@@ -560,9 +561,6 @@ export function getAnalysis(inputs: { mbti: string, zodiac: string, blood: strin
 //  const themeKanji = pickBySeed(themeKanjis, seed + 77);
 
   // 7. アイテム - 完全ランダム（毎回変わる）
-  //const item = solutionItems[Math.floor(Math.random() * solutionItems.length)];
-  const item = pickBySeed(solutionItems, seed + 99);
-  // (8) 信頼度 - ★ここを修正（68〜92の範囲に固定）
   // seed % 25 で 0〜24 の数字を作り、それに 68 を足す → 68〜92 になる
   const reliability = (seed % 25) + 68;
 
@@ -588,8 +586,30 @@ export function getAnalysis(inputs: { mbti: string, zodiac: string, blood: strin
     hidden,
     actionForecast,
     luckyDay,   // 追加
- //   themeKanji, // 追加
-    item,
+    item: {
+      // ★タイトルを変更
+      name: "恋愛・結婚情報サービス エンジェル",
+      
+      // ★説明文を変更（診断結果に関連付けるとGood）
+      description: "性格分析結果に基づいた、あなたにぴったりのパートナーをご紹介。まずは無料体験で相性をチェック。",
+      
+      // 画像はそのままでも良いですが、変えるなら publicフォルダに新しい画像を入れて指定
+      image: "https://www23.a8.net/svt/bgt?aid=260118584097&wid=001&eno=01&mid=s00000000339003002000&mc=1", 
+      
+      // ★ここにさっき抜き出した「A8のURL」を貼る！
+      link: "https://px.a8.net/svt/ejp?a8mat=4AV8S8+1LR2GI+2M6+HVFKX", 
+    },
     reliability
   };
-}
+
+};
+
+export const solutionItems: Item[] = [
+  {
+    name: "恋愛・結婚情報サービス エンジェル",
+    description: "性格分析結果に基づいた、あなたにぴったりのパートナーをご紹介。まずは無料体験で相性をチェック。",
+    image: "https://www23.a8.net/svt/bgt?aid=260118584097&wid=001&eno=01&mid=s00000000339003002000&mc=1", 
+    link: "https://px.a8.net/svt/ejp?a8mat=4AV8S8+1LR2GI+2M6+HVFKX", 
+  },
+  // 他のアイテムがあればここに追加
+];
