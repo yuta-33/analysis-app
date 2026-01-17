@@ -39,7 +39,7 @@ export default function AdSense() {
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // ★あなたのID
+        data-ad-client="ca-pub-8419400679212674" // ★あなたのID
         data-ad-slot="1234567890"               // ★広告ユニットID
         data-ad-format="auto"
         data-full-width-responsive="true"

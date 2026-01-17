@@ -38,7 +38,7 @@ export default function RootLayout({
         {/* ※今はコメントアウト状態でもOKですが、申請時は以下のパブリッシャーIDを書き換えてください */}
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419400679212674" 
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
