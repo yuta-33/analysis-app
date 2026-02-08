@@ -118,6 +118,29 @@ export default function Home() {
                     <AdSense />
                 </div>
             </div>
+            {/* ▼▼▼ AdSense審査対策用：コンテンツ記述エリア（ここからコピー） ▼▼▼ */}
+            <div className="mt-8 bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-left">
+                <h2 className="text-sm font-bold text-slate-700 border-b border-slate-200 pb-2">
+                    多角的性格分析とは？
+                </h2>
+                <div className="text-xs text-slate-500 space-y-3 leading-relaxed">
+                    <p>
+                        本アプリは、心理学的な性格分類指標である<span className="font-bold">MBTI</span>に加え、日本独自の文化的背景を持つ<span className="font-bold">血液型</span>、生得的な気質を示唆する<span className="font-bold">星座</span>、そして社会的背景（コホート分析）に基づく<span className="font-bold">年代</span>の4つの変数を掛け合わせた、複合的な性格分析ツールです。
+                    </p>
+                    <p>
+                        単一の指標では見えてこない「矛盾する性質」や「隠れた本性」を、64パターン以上の組み合わせから導き出します。就職活動の自己分析や、パートナーとの相性確認、友人との話題作りなどにご活用ください。
+                    </p>
+                    
+                    <h3 className="font-bold text-slate-600 pt-2 border-t border-slate-100 mt-2">分析ロジックについて</h3>
+                    <p>
+                        当サイトのアルゴリズムは、行動心理学の基礎理論と現代のWeb行動データを照合し、独自の重み付けを行っています。特に「Z世代のSNS行動」や「ミレニアル世代の価値観」など、世代ごとの行動特性を加味することで、より現代的な分析結果を提供します。
+                    </p>
+                    <p className="text-[10px] text-slate-400 mt-2">
+                        ※本診断結果は統計的傾向に基づくエンターテインメントであり、医学的診断や断定的な評価を保証するものではありません。
+                    </p>
+                </div>
+            </div>
+            {/* ▲▲▲ AdSense審査対策用：コンテンツ記述エリア（ここまでコピー） ▲▲▲ */}
         </div>
       )}
 
