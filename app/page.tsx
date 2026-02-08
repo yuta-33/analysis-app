@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getAnalysis } from "./data";
 import Image from "next/image";
+import Link from "next/link";
 import AdSense from "./components/AdSense";
 
 
@@ -11,7 +12,7 @@ type AnalysisResult = ReturnType<typeof getAnalysis>;
 const mbtiList = ["ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP", "ESTP", "ESFP", "ENFP", "ENTP", "ESTJ", "ESFJ", "ENFJ", "ENTJ"];
 const zodiacList = ["牡羊座", "牡牛座", "双子座", "蟹座", "獅子座", "乙女座", "天秤座", "蠍座", "射手座", "山羊座", "水瓶座", "魚座"];
 const bloodList = ["A型", "B型", "O型", "AB型"];
-const ageList = ["10代", "20代前半", "20代後半", "30代以上"];
+const ageList = ["10代", "20代前半", "20代後半", "30代", "40代", "50代", "60代以上"];
 const getCharacterImage = (mbti: string, blood: string) => {
   // 1. 血液型のサフィックス変換: O(1), A(2), B(3), AB(4)
   const bloodMap: Record<string, string> = {
@@ -350,6 +351,25 @@ export default function Home() {
           </div>
         </div>
       )}
+
+        <footer className="mt-12 py-8 text-center border-t border-slate-800">
+            <div className="flex justify-center gap-6 mb-4 text-xs text-slate-400">
+                <Link href="/privacy" className="hover:text-white transition-colors">
+                    プライバシーポリシー
+                </Link>
+                {/* ★ここに手順1で作ったGoogleフォームのURLを貼る */}
+                <a 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSe6y_NLZoC7kjnr_HaSmPsSALjEmjMAhftRKQIAODLbqkys3g/viewform?usp=dialog" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-white transition-colors"
+                >
+                    お問い合わせ
+                </a>
+            </div>
+            <p className="text-xs text-slate-600">&copy; 2026 性格・傾向分析アプリ All Rights Reserved.</p>
+        </footer>
+
 
     </main>
   );
